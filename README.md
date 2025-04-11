@@ -5,8 +5,10 @@
 
 <!-- badges: start -->
 
-[![](https://www.r-pkg.org/badges/version/lucid)](https://cran.r-project.org/package=lucid)
-[![](http://cranlogs.r-pkg.org/badges/last-month/lucid)](https://cran.r-project.org/package=lucid)
+[![CRAN Status
+badge](https://www.r-pkg.org/badges/version/lucid)](https://cran.r-project.org/package=lucid)
+[![CRAN
+Downloads](http://cranlogs.r-pkg.org/badges/last-month/lucid)](https://cran.r-project.org/package=lucid)
 <!-- badges: end -->
 
 Homepage: <https://kwstat.github.io/lucid>

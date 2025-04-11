@@ -11,13 +11,22 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+replace_empty_alt_text <- function(md_txt, new_alt_text) {
+  sub(
+    x = md_txt,
+    pattern = "![](",
+    replacement = paste0("![", new_alt_text, "]("),
+    fixed = TRUE
+  )
+}
 ```
 
 # lucid <img src="man/figures/logo.png" align="right" />
 
 <!-- badges: start -->
-`r badger::badge_cran_release()`
-`r badger::badge_cran_download()`
+`r badger::badge_cran_release() |> replace_empty_alt_text("CRAN Status badge")`
+`r badger::badge_cran_download() |> replace_empty_alt_text("CRAN Downloads")`
 <!-- badges: end -->
 
 Homepage: <https://kwstat.github.io/lucid>
