@@ -77,27 +77,25 @@ Orange %>%
 #> 10    4         age  0.13517222  0.010782940 12.535748 5.733090e-05
 ```
 
-<pre>
+``` r
 # Now extend the pipe to include 'lucid'
 Orange %>%
   group_by(Tree) %>%
   do(tidy(lm(circumference ~ age, data=.))) %>%
   as.data.frame %>%
   lucid
-&#10;# Note: `tibble` now uses formatting almost identical to `lucid`
+#>    Tree        term estimate std.error statistic   p.value
+#> 1     3 (Intercept)  19.2      5.86         3.28 0.0221   
+#> 2     3         age   0.0811   0.00563     14.4  0.000029 
+#> 3     1 (Intercept)  24.4      6.54         3.73 0.0135   
+#> 4     1         age   0.0815   0.00628     13    0.0000485
+#> 5     5 (Intercept)   8.76     8.18         1.07 0.333    
+#> 6     5         age   0.111    0.00785     14.1  0.0000318
+#> 7     2 (Intercept)  20        9.35         2.13 0.0859   
+#> 8     2         age   0.125    0.00898     13.9  0.0000343
+#> 9     4 (Intercept)  14.6     11.2          1.3  0.249    
+#> 10    4         age   0.135    0.0108      12.5  0.0000573
+
+# Note: `tibble` now uses formatting almost identical to `lucid`
 # Orange %>% group_by(Tree) %>% do(tidy(lm(circumference ~ age, data=.)))
-&#10;Source: local data frame [10 x 6]
-Groups: Tree [5]
-&#10;    Tree        term estimate std.error statistic   p.value
-   <ord>       <chr>    <chr>     <chr>     <chr>     <chr>
-1      3 (Intercept)  19.2      5.86         3.28 0.0221
-2      3         age   0.0811   0.00563     14.4  0.0000290
-3      1 (Intercept)  24.4      6.54         3.73 0.0135
-4      1         age   0.0815   0.00628     13    0.0000485
-5      5 (Intercept)   8.76     8.18         1.07 0.333
-6      5         age   0.111    0.00785     14.1  0.0000318
-7      2 (Intercept)  20        9.35         2.13 0.0859
-8      2         age   0.125    0.00898     13.9  0.0000343
-9      4 (Intercept)  14.6     11.2          1.3  0.249
-10     4         age   0.135    0.0108      12.5  0.0000573
-</pre>
+```
