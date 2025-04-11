@@ -3,9 +3,9 @@
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/lucid)](https://cran.r-project.org/package=lucid)
 [![CRAN_Downloads](https://cranlogs.r-pkg.org/badges/lucid)](https://cranlogs.r-pkg.org/badges/lucid)
 
-Homepage: https://kwstat.github.io/lucid
+Homepage: <https://kwstat.github.io/lucid>
 
-Repository: https://github.com/kwstat/lucid
+Repository: <https://github.com/kwstat/lucid>
 
 The 'lucid' package provides a simple function to improve the format of floating-point numbers for humans. The 'lucid()' function is primarily a _formatting_ function similar to 'round' and 'signif', but output is always character.
 
