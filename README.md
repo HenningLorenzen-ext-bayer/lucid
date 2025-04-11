@@ -44,19 +44,8 @@ by reducing visual clutter and aligning decimals.
 
 ``` r
 require(lucid)
-#> Loading required package: lucid
 require(dplyr)
-#> Loading required package: dplyr
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
 require(broom)
-#> Loading required package: broom
 
 # Fit a separate regression line to each tree.
 # Use `as.data.frame` to remove formatting done by `tibble`.
@@ -77,8 +66,9 @@ Orange %>%
 #> 10    4         age  0.13517222  0.010782940 12.535748 5.733090e-05
 ```
 
+Now extend the pipe to include ‘lucid’
+
 ``` r
-# Now extend the pipe to include 'lucid'
 Orange %>%
   group_by(Tree) %>%
   do(tidy(lm(circumference ~ age, data=.))) %>%
