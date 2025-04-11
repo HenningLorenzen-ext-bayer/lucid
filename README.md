@@ -41,7 +41,10 @@ require(broom)
 
 # Fit a separate regression line to each tree. 
 # Use `as.data.frame` to remove formatting done by `tibble`.
-Orange %>% group_by(Tree) %>% do(tidy(lm(circumference ~ age, data=.))) %>% as.data.frame
+Orange %>%
+  group_by(Tree) %>%
+  do(tidy(lm(circumference ~ age, data=.))) %>%
+  as.data.frame
 
 Source: local data frame [10 x 6]
 Groups: Tree [5]
@@ -60,7 +63,11 @@ Groups: Tree [5]
 10     4         age  0.13517222  0.010782940 12.535748 5.733090e-05
 
 # Now extend the pipe to include 'lucid'
-Orange %>% group_by(Tree) %>% do(tidy(lm(circumference ~ age, data=.))) %>% as.data.frame %>% lucid
+Orange %>% 
+  group_by(Tree) %>%
+  do(tidy(lm(circumference ~ age, data=.))) %>%
+  as.data.frame %>%
+  lucid
 
 # Note: `tibble` now uses formatting almost identical to `lucid`
 # Orange %>% group_by(Tree) %>% do(tidy(lm(circumference ~ age, data=.)))
