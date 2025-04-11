@@ -42,31 +42,43 @@ five trees’ circumference versus age. The default output is difficult to
 interpret quickly. The `lucid` function makes the results much cleaner
 by reducing visual clutter and aligning decimals.
 
-<pre>
+``` r
 require(lucid)
+#> Loading required package: lucid
 require(dplyr)
+#> Loading required package: dplyr
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
 require(broom)
-&#10;# Fit a separate regression line to each tree.
+#> Loading required package: broom
+
+# Fit a separate regression line to each tree.
 # Use `as.data.frame` to remove formatting done by `tibble`.
 Orange %>%
   group_by(Tree) %>%
   do(tidy(lm(circumference ~ age, data=.))) %>%
   as.data.frame
-&#10;Source: local data frame [10 x 6]
-Groups: Tree [5]
-&#10;    Tree        term    estimate    std.error statistic      p.value
-   <ord>       <chr>       <dbl>        <dbl>     <dbl>        <dbl>
-1      3 (Intercept) 19.20353638  5.863410215  3.275148 2.207255e-02
-2      3         age  0.08111158  0.005628105 14.411881 2.901046e-05
-3      1 (Intercept) 24.43784664  6.543311039  3.734783 1.350409e-02
-4      1         age  0.08147716  0.006280721 12.972581 4.851902e-05
-5      5 (Intercept)  8.75834459  8.176436207  1.071169 3.330518e-01
-6      5         age  0.11102891  0.007848307 14.146861 3.177093e-05
-7      2 (Intercept) 19.96090337  9.352361105  2.134317 8.593318e-02
-8      2         age  0.12506176  0.008977041 13.931291 3.425041e-05
-9      4 (Intercept) 14.63762022 11.233762751  1.303002 2.493507e-01
-10     4         age  0.13517222  0.010782940 12.535748 5.733090e-05
-&#10;# Now extend the pipe to include 'lucid'
+#>    Tree        term    estimate    std.error statistic      p.value
+#> 1     3 (Intercept) 19.20353638  5.863410215  3.275148 2.207255e-02
+#> 2     3         age  0.08111158  0.005628105 14.411881 2.901046e-05
+#> 3     1 (Intercept) 24.43784664  6.543311039  3.734783 1.350409e-02
+#> 4     1         age  0.08147716  0.006280721 12.972581 4.851902e-05
+#> 5     5 (Intercept)  8.75834459  8.176436207  1.071169 3.330518e-01
+#> 6     5         age  0.11102891  0.007848307 14.146861 3.177093e-05
+#> 7     2 (Intercept) 19.96090337  9.352361105  2.134317 8.593318e-02
+#> 8     2         age  0.12506176  0.008977041 13.931291 3.425041e-05
+#> 9     4 (Intercept) 14.63762022 11.233762751  1.303002 2.493507e-01
+#> 10    4         age  0.13517222  0.010782940 12.535748 5.733090e-05
+```
+
+<pre>
+# Now extend the pipe to include 'lucid'
 Orange %>%
   group_by(Tree) %>%
   do(tidy(lm(circumference ~ age, data=.))) %>%
