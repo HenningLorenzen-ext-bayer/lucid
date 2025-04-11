@@ -73,7 +73,7 @@ Orange %>%
   lucid()
 ```
 
-# Note: `tibble` now uses formatting almost identical to `lucid`
+Note: `tibble` now uses formatting almost identical to `lucid`
 ```{r}
 Orange %>%
   group_by(Tree) %>%

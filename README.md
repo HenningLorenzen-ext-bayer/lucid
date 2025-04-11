@@ -89,7 +89,7 @@ Orange %>%
 #> 10    4         age   0.135    0.0108      12.5  0.0000573
 ```
 
-# Note: `tibble` now uses formatting almost identical to `lucid`
+Note: `tibble` now uses formatting almost identical to `lucid`
 
 ``` r
 Orange %>%
