@@ -35,7 +35,7 @@ Note: The `lucid` package was created before the `tibble` package. The `tibble` 
 
 ## Installation
 
-```R
+```{r eval=FALSE}
 # Install the released version from CRAN:
 install.packages("lucid")
 
